@@ -1,0 +1,38 @@
+/*navigation pannel classes*/
+body{
+	margin:0;
+}
+
+.nav-bar{
+	text-align:center;
+	background-color: #5d6b80;
+	display:flex;
+	justify-content:space-between;
+	height: 50px;
+}
+
+.logo{
+	padding-top:6px;
+	width:150px;
+	background-color: #8191a8;
+	margin:5px;
+}
+
+.log-sig-buttons{
+	padding-top:6px;
+	width:150px;
+	background-color: #8191a8;
+	margin:5px;
+}
+
+.center-block-text{
+	margin:auto;
+}
+
+/* панель для поиска людей  */
+.find-pannel{
+	margin:50px;
+	padding:10px;
+	height:70px;
+	border: 4px dotted blue;
+}
