@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-		<link rel="stylesheet" href="static/css/styles.css">
-    </head>
-    <body>
-	<nav class="nav-bar">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="static/css/styles.css">
+</head>
+
+<body>
+	<nav class="nav-bar ">
 		<div class="logo">
 			Список студентов
 		</div>
-		
+
 		<div class="log-sig-buttons">
 			<span><a href="">Войти</a></span>
 			<span><a href="">Регистрация</a></span>
 		</div>
 	</nav>
-	
-	<div class="find-pannel">
+
+	<div class="find-pannel main-containers">
 		Тут будут кнопки поиска людей
 	</div>
-	
-	<div class="table-containeer">
+
+	<div class="table-containeer main-containers">
 		<table>
-		<!-- это код для будущей таблицы студентов
-		{% for post in p_posts %}
-				<div class="post">
-					<h2 class="post-title">{{post["title"]}}</h2>
-					<h3 class="post-subtitle">{{post["subtitle"]}}</h3>
-					<p class="post-article">{{post["body"]}}</p>
-					<a href="{{url_for('get_blog',id = post['id'])}}"> read</a>
-				</div>
-		{% endfor %}
-		!-->
+			{% for post in posts %}
+			{% if post["Name"]!="Unknown" %}
+			<tr>
+				<td>{{post["Name"]}}</td>
+				<td>{{post["BreastSize"]}}</td>
+				<td>{{post["Info"]}}</td>
+			</tr>
+			{% endif %}
+			{% endfor %}
 	</div>
-	</body>
+</body>
+
 </html>

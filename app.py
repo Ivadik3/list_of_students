@@ -1,17 +1,8 @@
-from flask import Flask,render_template
+import imp
+from flask import Flask
+
+#основной класс приложения, где создаем объект фласки
 
 
-
-#hello world
 app = Flask(__name__)
 
-
-@app.route("/main")
-def main_page():
-    return render_template("students.html")
-
-
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
