@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-<<<<<<< HEAD
-    <head>
-        <meta charset="utf-8">
-		<link rel="stylesheet" href="static/css/styles.css">
-    </head>
-    <body>
-	<nav class="nav-bar border_blue">
-		<div class="logo">
-			Список студентов
-		</div>
-		
-		<div class="log-sig-buttons border_blue">
-=======
 
 <head>
 	<meta charset="utf-8">
@@ -22,36 +9,33 @@
 
 <body>
 	<nav class="nav-bar ">
-		<div class="logo">
-			Список студентов
+		<div class="logo" >
+			<a href="{{url_for('main_page')}}">Список студентов</a>
 		</div>
 
 		<div class="log-sig-buttons">
->>>>>>> origin/main
 			<span><a href="">Войти</a></span>
 			<span><a href="">Регистрация</a></span>
 		</div>
 	</nav>
-<<<<<<< HEAD
-	
-	<div class="find-pannel border_blue">
-		Тут будут кнопки поиска людей
-	</div>
-	
-	<div class="table-containeer border_blue">
-=======
 
 	<div class="find-pannel main-containers">
 		Тут будут кнопки поиска людей
 	</div>
 
-	<div class="table-containeer main-containers">
->>>>>>> origin/main
-		<table>
+	<div class="table-containeer main-containers border_blue">
+		<table >
+			<thead>
+				<tr >
+					<th >Name</th>
+					<th >Breast size</th>
+					<th >Info</th>
+				</tr>
+			</thead>
 			{% for post in posts %}
 			{% if post["Name"]!="Unknown" %}
-			<tr>
-				<td>{{post["Name"]}}</td>
+			<tr >
+				<td><a href="{{url_for('student_page',student_id=post['ID'])}}">{{post["Name"]}}</a></td>
 				<td>{{post["BreastSize"]}}</td>
 				<td>{{post["Info"]}}</td>
 			</tr>

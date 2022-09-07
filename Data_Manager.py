@@ -19,3 +19,13 @@ class Data_Manager:
         with open(Data_Manager.USERS,"r") as file:
             posts = json.load(file)
         return posts
+
+    def get_student(self,id):
+        with open(Data_Manager.USERS,"r") as file:
+            post = list(filter(lambda dict1: dict1["ID"] == str(id),json.load(file)))
+            #print(post)
+        if post:
+            return post[0]
+        return {}
+            
+
