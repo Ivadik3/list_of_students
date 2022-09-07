@@ -34,7 +34,6 @@ body {
 }
 
 /* панель для поиска людей  */
-<<<<<<< HEAD
 .find-pannel{
 	width:90%;
 	margin: 40px auto 40px auto;
@@ -53,24 +52,4 @@ body {
 	width: 90%;
 	min-height: 300px;
 	
-=======
-.find-pannel {
-
-	height: 70px;
-}
-
-/* таблица поиска людей */
-
-.table-containeer {
-	min-height: 400px;
-}
-
-/* universal classes */
-
-.main-containers {
-	margin: 50px;
-	padding: 10px;
-	width: 85%;
-	border: 2px dotted blue;
->>>>>>> origin/main
 }
