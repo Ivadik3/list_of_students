@@ -1,41 +1,21 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+{% extends "base.html" %}
+
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="static/css/styles.css">
-
-    </head>
-    <body>
-        <nav class="nav-bar">
-            <div class="logo" >
-                <a href="{{url_for('main_page')}}">Список студентов</a>
-            </div>
-    
-            <div class="log-sig-buttons">
-                <span><a href="">Войти</a></span>
-                <span><a href="">Регистрация</a></span>
-            </div>
-        </nav>
-
+    {% block content %}
         <div class="border_blue">
             <div class="border_blue">
                 <object data="http://stackoverflow.com/does-not-exist.png" type="image/png">
                     <img src="https://cdn.sstatic.net/Img/unified/sprites.svg?v=e5e58ae7df45" alt="profile picture of {{persona['Name']}}">
                 </object>
             </div>
-            <div class="description-container border_blue">
-                <h1>{{persona["Name"]}}</h1>
+            <div class="border_blue">
+                <h1 class="border_blue">{{persona["Name"]}}</h1>
             </div>
         </div>
-        
+    {% endblock %}
+    
+    {% block misc_content %}
+
+    {% endblock %}
         <script src="" async defer></script>
-    </body>
 </html>
