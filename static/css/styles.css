@@ -3,37 +3,38 @@
 }
 
 /*navigation pannel classes*/
-body{
-	margin:0;
+body {
+	margin: 0;
 }
 
-.nav-bar{
-	text-align:center;
+.nav-bar {
+	text-align: center;
 	background-color: #5d6b80;
-	display:flex;
-	justify-content:space-between;
+	display: flex;
+	justify-content: space-between;
 	height: 50px;
 }
 
-.logo{
-	padding-top:6px;
-	width:150px;
+.logo {
+	padding-top: 6px;
+	width: 150px;
 	background-color: #8191a8;
-	margin:5px;
+	margin: 5px;
 }
 
-.log-sig-buttons{
-	padding-top:6px;
-	width:150px;
+.log-sig-buttons {
+	padding-top: 6px;
+	width: 150px;
 	background-color: #8191a8;
-	margin:5px;
+	margin: 5px;
 }
 
-.center-block-text{
-	margin:auto;
+.center-block-text {
+	margin: auto;
 }
 
 /* панель для поиска людей  */
+<<<<<<< HEAD
 .find-pannel{
 	width:90%;
 	margin: 40px auto 40px auto;
@@ -52,4 +53,24 @@ body{
 	width: 90%;
 	min-height: 300px;
 	
+=======
+.find-pannel {
+
+	height: 70px;
+}
+
+/* таблица поиска людей */
+
+.table-containeer {
+	min-height: 400px;
+}
+
+/* universal classes */
+
+.main-containers {
+	margin: 50px;
+	padding: 10px;
+	width: 85%;
+	border: 2px dotted blue;
+>>>>>>> origin/main
 }

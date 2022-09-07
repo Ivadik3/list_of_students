@@ -1,10 +1,12 @@
-from flask import Flask,render_template
+import imp
+from flask import Flask
+
+#основной класс приложения, где создаем объект фласки
 
 
-
-#hello world
 app = Flask(__name__)
 
+<<<<<<< HEAD
 
 @app.route("/main")
 def main_page():
@@ -18,3 +20,5 @@ def main_page():
 
 if __name__ == "__main__":
     app.run(debug=True)
+=======
+>>>>>>> origin/main

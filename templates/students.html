@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+<<<<<<< HEAD
     <head>
         <meta charset="utf-8">
 		<link rel="stylesheet" href="static/css/styles.css">
@@ -12,27 +13,51 @@
 		</div>
 		
 		<div class="log-sig-buttons border_blue">
+=======
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="static/css/styles.css">
+</head>
+
+<body>
+	<nav class="nav-bar ">
+		<div class="logo">
+			Список студентов
+		</div>
+
+		<div class="log-sig-buttons">
+>>>>>>> origin/main
 			<span><a href="">Войти</a></span>
 			<span><a href="">Регистрация</a></span>
 		</div>
 	</nav>
+<<<<<<< HEAD
 	
 	<div class="find-pannel border_blue">
 		Тут будут кнопки поиска людей
 	</div>
 	
 	<div class="table-containeer border_blue">
-		<table>
-		<!-- это код для будущей таблицы студентов
-		{% for post in p_posts %}
-				<div class="post">
-					<h2 class="post-title">{{post["title"]}}</h2>
-					<h3 class="post-subtitle">{{post["subtitle"]}}</h3>
-					<p class="post-article">{{post["body"]}}</p>
-					<a href="{{url_for('get_blog',id = post['id'])}}"> read</a>
-				</div>
-		{% endfor %}
-		!-->
+=======
+
+	<div class="find-pannel main-containers">
+		Тут будут кнопки поиска людей
 	</div>
-	</body>
+
+	<div class="table-containeer main-containers">
+>>>>>>> origin/main
+		<table>
+			{% for post in posts %}
+			{% if post["Name"]!="Unknown" %}
+			<tr>
+				<td>{{post["Name"]}}</td>
+				<td>{{post["BreastSize"]}}</td>
+				<td>{{post["Info"]}}</td>
+			</tr>
+			{% endif %}
+			{% endfor %}
+	</div>
+</body>
+
 </html>
