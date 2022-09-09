@@ -1,31 +1,30 @@
 {% extends "base.html" %}
 
 
+{% block misc_content %}
+<div class="find-pannel main-containers">
+    Тут будут кнопки поиска людей
+</div>
+{% endblock %}
 
 {% block content %}
-    <div class="table-containeer main-containers border_blue">
-        <table >
-            <thead>
-                <tr >
-                    <th >Name</th>
-                    <th >Breast size</th>
-                    <th >Info</th>
-                </tr>
-            </thead>
-            {% for post in posts %}
-            {% if post["Name"]!="Unknown" %}
-            <tr >
-                <td><a href="{{url_for('student_page',student_id=post['ID'])}}">{{post["Name"]}}</a></td>
-                <td>{{post["BreastSize"]}}</td>
-                <td>{{post["Info"]}}</td>
+<div class="table-containeer main-containers border_blue">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Breast size</th>
+                <th>Info</th>
             </tr>
-            {% endif %}
-            {% endfor %}
-    </div>
-    {% endblock %}
-
-    {% block misc_content %}
-    <div class="find-pannel main-containers">
-        Тут будут кнопки поиска людей
-    </div>
-    {% endblock %}
+        </thead>
+        {% for post in posts %}
+        {% if post["Name"]!="Unknown" %}
+        <tr>
+            <td><a href="{{url_for('student_page',student_id=post['ID'])}}">{{post["Name"]}}</a></td>
+            <td>{{post["BreastSize"]}}</td>
+            <td>{{post["Info"]}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+</div>
+{% endblock %}

@@ -3,34 +3,38 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	
-    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css" >
+    <meta charset="utf-8">
+
+    <link href="static/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="static/css/profile_style.css" rel="stylesheet" type="text/css">
+
+
 </head>
 
 <body>
-	<nav class="nav-bar ">
-		<div class="logo" >
-			<a href="{{url_for('main_page')}}">Список студентов</a>
-		</div>
+    <nav class="nav-bar ">
+        <div class="logo">
+            <a href="{{url_for('main_page')}}">Список студентов</a>
+        </div>
 
-		<div class="log-sig-buttons">
-			<span><a href="">Войти</a></span>
-			<span><a href="">Регистрация</a></span>
-		</div>
-	</nav>
-
-    <div class="container-block">
-        {% block misc_content %}
-        
-        {% endblock %}
-    </div>
+        <div class="log-sig-buttons">
+            <span><a href="">Войти</a></span>
+            <span><a href="">Регистрация</a></span>
+        </div>
+    </nav>
 
     <div class="container-block">
         {% block content %}
-            <!-- основной контент-->
+        <!-- основной контент-->
         {% endblock %}
     </div>
+    <div class="container-block">
+        {% block misc_content %}
+        <!-- основной контент-->
+        {% endblock %}
+    </div>
+
+
 
 
 </html>
