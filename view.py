@@ -13,7 +13,7 @@ def main_page():
         
     return render_template("student_list.html",posts = list_of_posts)
 
-@app.route("/<int:student_id>")
+@app.route("/main/<int:student_id>")
 def student_page(student_id):
     persona_dict = D_manager.get_student(student_id)
     print(persona_dict)
