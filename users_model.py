@@ -4,8 +4,8 @@
 
 class User():
     NOT_DEFINED = "not defined"
-    def __init__(self,id,name,gender):
-        self.ID = id
+    def __init__(self,name,gender):
+        self.ID = User.NOT_DEFINED
         self.Name = name
         self.Gender = gender
         self.class_ = User.NOT_DEFINED

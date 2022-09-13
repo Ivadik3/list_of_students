@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<body>
+    <form method="post">
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="user_name" placeholder="Enter your name"></input>
+        <br>
+
+        <label for="content">Message Content</label>
+        <br>
+        <textarea name="user_gender" placeholder="Enter your gender"></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <h1>{{message}}</h1>
+</body>
+
+{% endblock %}
+
+{% block misc_content %}
+
+{% endblock %}
