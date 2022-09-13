@@ -12,4 +12,37 @@
 	border: 4px dotted blue;
 }
 
+.info-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding:10px;
+}
 
+.left_info_cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:400px;
+}
+
+.cont_no_image{
+    width:300px;
+    height:300px;
+    margin:20px 0 20px 0;
+}
+
+.cont_image{
+    margin:10px;
+    padding:20px;
+}
+
+.cont_name{
+    padding:20px;
+    margin:20px;
+    font-weight: 1.5rem;
+}
+
+.about_info_cont{
+    margin: 20px;
+}

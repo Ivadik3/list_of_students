@@ -2,16 +2,27 @@
 
 <html>
     {% block content %}
-        <div class="border_blue">
-            <div class="border_blue">
-                <object data="http://stackoverflow.com/does-not-exist.png" type="image/png">
-                    <img src="https://cdn.sstatic.net/Img/unified/sprites.svg?v=e5e58ae7df45" alt="profile picture of {{persona['Name']}}">
+        <div class="info-cont border_blue">
+            <div class="left_info_cont border_blue">
+                <object class="cont_no_image border_blue" data="{{ url_for('static', filename='/images/no_pic.jpg') }}" type="image/png">
+                    <img src="" alt="profile picture of {{persona['Name']}}">
                 </object>
+                <div class="cont_name border_blue">
+                    <h1 class="border_blue">{{persona["Name"]}}</h1>
+                </div>
             </div>
-            <div class="border_blue">
-                <h1 class="border_blue">{{persona["Name"]}}</h1>
+            <div class ="about_info_cont">
+                <h3>About me</h3>
+                <p class="text_info_cont">
+                    {{persona["Info"]}}
+                </p>
+                <h3>Recent activites</h3>
+                <p class="text_info_cont">
+                    {{persona["ScheduleDestination"]}}
+                </p>
             </div>
         </div>
+        
     {% endblock %}
     
     {% block misc_content %}
