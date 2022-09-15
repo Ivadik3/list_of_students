@@ -38,6 +38,7 @@ class Data_Manager:
             for el in posts:            ###оптимизировать этот цикл какой то крутой функцией
                 if int(el["ID"])>max_id:      
                     max_id = int(el["ID"])
+            max_id = str(int(max_id)+1)
             posts.append(
             {
                 "ID": f"{max_id}",
@@ -65,3 +66,12 @@ class Data_Manager:
         with open(Data_Manager.USERS,"w",encoding ='utf8') as file:
             json.dump(posts,file,ensure_ascii = False) 
 
+    def user_exists(self,name):
+        with open(Data_Manager.USERS,"r") as file:
+            posts = json.load(file)
+            #print(posts)
+            #print("hello")
+            name_exists = list(filter(lambda el:el["Name"]==name,posts))
+            if len(name_exists)>0:
+                return True
+            return False

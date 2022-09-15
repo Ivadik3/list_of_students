@@ -3,7 +3,8 @@
 
 
 class User():
-    NOT_DEFINED = "not defined"
+    NOT_DEFINED = ""
+
     def __init__(self,name,gender):
         self.ID = User.NOT_DEFINED
         self.Name = name
