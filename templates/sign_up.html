@@ -4,22 +4,27 @@
 {% block content %}
 
 <body>
-    <form method="post">
-        <label for="title">Title</label>
-        <br>
-        <input type="text" name="user_name" placeholder="Enter your name"></input>
-        <br>
-        <label>{{name_error}}</label>
-        <label for="content">Message Content</label>
-        <br>
-        <label for="cars">Select your gender</label>
-        <select id="cars" name="user_gender">
-          <option value="0">f</option>
-          <option value="1">m</option>
-        </select> 
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+   
+        <div class ="sign_up_cont">
+          <form method="POST">
+            <div class ="element_s_up">
+              <label for="title">Name</label>
+              <label id="cont_error_msg">{{name_error}}</label>
+              <input id="name_field" type="text" name="user_name" placeholder="Enter your name"></input>
+            </div>
+            <div class ="element_s_up">
+              <label>Select your gender</label>
+              <select id="gender" name="user_gender">
+                <option value="0">f</option>
+                <option value="1">m</option>
+              </select>
+            </div>
+            <div class="element_s_up btn-cont">
+              <button class="s_up_btn" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+    
     <h1>{{message}}</h1>
 </body>
 

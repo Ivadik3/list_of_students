@@ -1,0 +1,33 @@
+.sign_up_cont{
+    margin: 20% auto 0 auto;
+    width: 300px;
+    background-color:#5d6b80;
+}
+
+.element_s_up{
+    margin:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.sign_up_cont{
+    padding:30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+
+.s_up_btn{
+    margin-top: 100px;
+    height: 70px;
+}
+
+#cont_error_msg{
+    height: 20px;
+    margin:10px 10px 10px 0px;
+    padding: 10px;
+    background-color: red;
+    border-radius: 10px;
+}

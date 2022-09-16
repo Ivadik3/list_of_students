@@ -1,3 +1,4 @@
+from operator import is_
 from app import app
 from flask import render_template,request,redirect,flash,url_for
 from Data_Manager import Data_Manager
@@ -25,19 +26,30 @@ def student_page(student_id):
 def login_page():
     name=""
     gender=""
+    name_error=""
     #print("this is request method",request.method)
     if request.method == "POST":
         name = request.form["user_name"]
         gender = request.form["user_gender"]
-        name_error=""
+        print(name)
         #print("parameters:",name,gender)
-        is_exist = D_manager.user_exists("name")
+        is_exist = D_manager.user_exists(name)
+        print(is_exist)
         if name and gender and not is_exist:
             D_manager.set_student(User(name,gender))
+            flash(f"Thanks for registration {name}")
             return redirect(url_for("main_page"))
         elif is_exist:
             name_error = "name already exists!"     #переделать под почту/уникальный логин
-            return redirect(url_for("sign_up.html",name_error))
+            #return redirect(url_for("sign_up.html",name_error=name_error))
+            return render_template("sign_up.html",name_error= name_error)        
+        else:
+            name_error = "name field is empty!"
+            #return redirect(url_for("sign_up.html",name_error=name_error))
+            
+            return render_template("sign_up.html",name_error= name_error) 
+
     else:
-        return render_template("sign_up.html",name_error)
+        #если реквест метод GET, просто возвращаем страницу
+        return render_template("sign_up.html",name_error=name_error)
         

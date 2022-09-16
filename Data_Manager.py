@@ -69,9 +69,8 @@ class Data_Manager:
     def user_exists(self,name):
         with open(Data_Manager.USERS,"r") as file:
             posts = json.load(file)
-            #print(posts)
-            #print("hello")
             name_exists = list(filter(lambda el:el["Name"]==name,posts))
+            print(name_exists)
             if len(name_exists)>0:
                 return True
             return False
