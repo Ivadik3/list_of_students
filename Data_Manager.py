@@ -21,14 +21,17 @@ class Data_Manager:
             posts = json.load(file)
         return posts
 
-    def get_student(self,id):
+    def get_student(self,id,name=None):
         #из за того что жсон грузится в виде [{json file}] мы должны делать
         #крокозяблу с filter-ом
         with open(Data_Manager.USERS,"r") as file:
-            post = list(filter(lambda dict1: dict1["ID"] == str(id),json.load(file)))
+            if not name:
+                individual_user = list(filter(lambda dict1: dict1["ID"] == str(id),json.load(file)))
+            else:
+                individual_user = list(filter(lambda dict1: dict1["Name"] == str(name),json.load(file)))
             #print(post)
-        if post:
-            return post[0]
+        if individual_user:
+            return individual_user[0]
         return {}
             
     def set_student(self,user_object):
@@ -39,32 +42,11 @@ class Data_Manager:
                 if int(el["ID"])>max_id:      
                     max_id = int(el["ID"])
             max_id = str(int(max_id)+1)
-            posts.append(
-            {
-                "ID": f"{max_id}",
-                "Name": f"{user_object.Name}",
-                "Gender": f"{user_object.Gender}",
-                "Class": user_object.NOT_DEFINED,
-                "Seat": user_object.NOT_DEFINED,
-                "Club": user_object.NOT_DEFINED,
-                "Persona": user_object.NOT_DEFINED,
-                "Crush": user_object.NOT_DEFINED,
-                "BreastSize": user_object.NOT_DEFINED,
-                "Strength": user_object.NOT_DEFINED,
-                "Hairstyle": user_object.NOT_DEFINED,
-                "Color": user_object.NOT_DEFINED,
-                "Eyes": user_object.NOT_DEFINED,
-                "EyeType": user_object.NOT_DEFINED,
-                "Stockings": user_object.NOT_DEFINED,
-                "Accessory": user_object.NOT_DEFINED,
-                "ScheduleTime": user_object.NOT_DEFINED,
-                "ScheduleDestination": user_object.NOT_DEFINED,
-                "ScheduleAction": user_object.NOT_DEFINED,
-                "Info": user_object.NOT_DEFINED
-             }
-            )
+            user_object.ID= f"{max_id}"
+            posts.append(user_object.__dict__)
         with open(Data_Manager.USERS,"w",encoding ='utf8') as file:
             json.dump(posts,file,ensure_ascii = False) 
+        return int(max_id)
 
     def user_exists(self,name):
         with open(Data_Manager.USERS,"r") as file:

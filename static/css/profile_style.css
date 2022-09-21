@@ -69,3 +69,7 @@
 .about_info_cont {
     margin: 20px;
 }
+.redact_info_cont{
+    align-items: flex-start;
+    width:100%;
+}

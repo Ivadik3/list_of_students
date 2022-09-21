@@ -24,7 +24,13 @@
             {{persona["ScheduleDestination"]}}
         </p>
     </div>
+   
 </div>
+{% if g.student and g.student["ID"] == persona["ID"]  %}
+<div class="left_info_cont redact_info_cont border_blue"">
+    <div class="log-sig-buttons"><a>Редактировать данные</a></div>
+</div>
+{% endif %}
 
 {% endblock %}
 

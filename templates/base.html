@@ -21,16 +21,26 @@
         </div>
     {% endif %}
     {% endwith %}
-        </div>
     <nav class="nav-bar ">
         <div class="logo">
             <a href="{{url_for('main_page')}}">Список студентов</a>
         </div>
-
-        <div class="log-sig-buttons">
-            <span><a href="">Войти</a></span>
-            <span><a href="{{url_for('login_page')}}">Регистрация</a></span>
-        </div>
+        {% if not g.student %}
+            <div class="log-sig-buttons">
+                <span><a href="{{url_for('login_page')}}">Войти</a></span>
+                <span><a href="{{url_for('signup_page')}}">Регистрация</a></span>
+            </div>
+        {% else %}
+            <div class = "log-right-content">
+                <div class="log-sig-buttons">
+                    <span>Добро пожаловать</span><br>    
+                    <span><a href="{{url_for('student_page',student_id=g.student['ID'])}}">{{g.student.Name}}</a></span>
+                </div>
+                <div class="log-sig-buttons">
+                    <span><a href="{{url_for('log_out')}}">Log-Out</a></span>
+                </div>
+            </div>
+        {% endif %}
     </nav>
 
     <div class="container-block">

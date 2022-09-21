@@ -8,5 +8,5 @@ import os
 #основной класс приложения, где создаем объект фласки
 
 app = Flask(__name__)
-
+app.secret_key="sdfpor23po1rplwekqqewtupeseurst"
 
