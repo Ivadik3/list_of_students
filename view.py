@@ -18,7 +18,7 @@ def main_page():
 @app.route("/main/students/<int:student_id>")
 def student_page(student_id):
     persona_dict = D_manager.get_student(student_id)
-    print(persona_dict)
+    #print(persona_dict)
     
     return render_template("personal_page.html",persona = persona_dict)
 
