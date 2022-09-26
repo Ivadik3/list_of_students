@@ -19,7 +19,7 @@ body {
 	background-color: #5d6b80;
 	display: flex;
 	justify-content: space-between;
-	height: 50px;
+	height: 80px;
 	margin-bottom: 20px;
 }
 
@@ -31,12 +31,16 @@ body {
 }
 
 .log-sig-buttons {
-	padding-top: 6px;
+	padding-top: 2px;
 	width: 150px;
 	background-color: #8191a8;
 	margin: 5px;
+	padding: 10px;
 }
-
+.log-right-content{
+	display: flex;
+	flex-direction: row;
+}
 .center-block-text {
 	margin: auto;
 }

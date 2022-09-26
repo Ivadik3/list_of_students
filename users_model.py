@@ -5,7 +5,7 @@
 class User():
     NOT_DEFINED = ""
 
-    def __init__(self,name,gender):
+    def __init__(self,name,gender,password):
         self.ID = User.NOT_DEFINED
         self.Name = name
         self.Gender = gender
@@ -26,3 +26,4 @@ class User():
         self.ScheduleDestination = User.NOT_DEFINED
         self.ScheduleAction = User.NOT_DEFINED
         self.Info = User.NOT_DEFINED 
+        self.Password = password
