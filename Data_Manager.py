@@ -26,13 +26,15 @@ class Data_Manager:
         #крокозяблу с filter-ом
         with open(Data_Manager.USERS,"r") as file:
             if not name:
-                individual_user = list(filter(lambda dict1: dict1["ID"] == str(id),json.load(file)))
+                individual_user = list(filter(lambda dict1: dict1["ID"] == id,json.load(file)))
             else:
                 individual_user = list(filter(lambda dict1: dict1["Name"] == str(name),json.load(file)))
             #print(post)
         if individual_user:
-            return individual_user[0]
-        return {}
+            user = users_model.User(name = None,gender=None,password=None)
+            user.set_attributes(individual_user[0])
+            return user
+        return None
             
     def set_student(self,user_object):
         with open(Data_Manager.USERS,"r") as file:
@@ -40,13 +42,25 @@ class Data_Manager:
             max_id = 0
             for el in posts:            ###оптимизировать этот цикл какой то крутой функцией
                 if int(el["ID"])>max_id:      
-                    max_id = int(el["ID"])
-            max_id = str(int(max_id)+1)
-            user_object.ID= f"{max_id}"
+                    max_id = el["ID"]
+            user_object.ID = max_id+1
             posts.append(user_object.__dict__)
         with open(Data_Manager.USERS,"w",encoding ='utf8') as file:
             json.dump(posts,file,ensure_ascii = False) 
-        return int(max_id)
+        return int(max_id+1)
+
+    
+    def update_student(self,user_object):
+        with open(Data_Manager.USERS,"r") as file:
+            posts = json.load(file)
+        for i in range(len(posts)):
+            if posts[i]["ID"] == user_object.ID:
+                posts[i] = user_object.__dict__   
+        with open (Data_Manager.USERS,"w",encoding='utf8') as file:
+            json.dump(posts,file,ensure_ascii=False)
+        
+
+
 
     def user_exists(self,name):
         with open(Data_Manager.USERS,"r") as file:

@@ -6,29 +6,31 @@
 {% block content %}
 <div class="info-cont border_blue">
     <div class="left_info_cont border_blue">
-        <object class="cont_no_image border_blue" data="{{ url_for('static', filename='/images/no_pic.jpg') }}"
-            type="image/png">
-            <img src="" alt="profile picture of {{persona['Name']}}">
-        </object>
+        {% if g.student.Image %}
+        <img class="cont_no_image" src="{{url_for('static',filename = 'uploaded_images/' + persona.Image)}}"></img>
+        {% else %}
+        <img class="cont_no_image" src="{{url_for('static',filename ='images/no_pic.jpg')}}"></img>
+        {% endif %}
         <div class="cont_name border_blue">
-            <h1 class="border_blue">{{persona["Name"]}}</h1>
+            <h1 class="border_blue">{{persona.Name}}</h1>
         </div>
     </div>
     <div class="about_info_cont">
         <h3>About me</h3>
         <p class="text_info_cont">
-            {{persona["Info"]}}
+            {{persona.Info}}
         </p>
         <h3>Recent activites</h3>
         <p class="text_info_cont">
-            {{persona["ScheduleDestination"]}}
+            {{persona.ScheduleAction}}
         </p>
     </div>
-   
+
 </div>
-{% if g.student and g.student["ID"] == persona["ID"]  %}
+{% if g.student and g.student.ID == persona.ID %}
 <div class="left_info_cont redact_info_cont border_blue"">
-    <div class="log-sig-buttons"><a>Редактировать данные</a></div>
+    <div class=" log-sig-buttons"><a href="{{url_for('redact_student_page',student_id=persona['ID'])}}">Редактировать
+        данные</a></div>
 </div>
 {% endif %}
 

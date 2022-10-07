@@ -16,9 +16,9 @@
 <body>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-        <div class = "succsess_regist">
-            {{messages[0]}}
-        </div>
+    <div class="succsess_regist">
+        {{messages[0]}}
+    </div>
     {% endif %}
     {% endwith %}
     <nav class="nav-bar ">
@@ -26,20 +26,20 @@
             <a href="{{url_for('main_page')}}">Список студентов</a>
         </div>
         {% if not g.student %}
-            <div class="log-sig-buttons">
-                <span><a href="{{url_for('login_page')}}">Войти</a></span>
-                <span><a href="{{url_for('signup_page')}}">Регистрация</a></span>
-            </div>
+        <div class="log-sig-buttons">
+            <span><a href="{{url_for('login_page')}}">Войти</a></span>
+            <span><a href="{{url_for('signup_page')}}">Регистрация</a></span>
+        </div>
         {% else %}
-            <div class = "log-right-content">
-                <div class="log-sig-buttons">
-                    <span>Добро пожаловать</span><br>    
-                    <span><a href="{{url_for('student_page',student_id=g.student['ID'])}}">{{g.student.Name}}</a></span>
-                </div>
-                <div class="log-sig-buttons">
-                    <span><a href="{{url_for('log_out')}}">Log-Out</a></span>
-                </div>
+        <div class="log-right-content">
+            <div class="log-sig-buttons">
+                <span>Добро пожаловать</span><br>
+                <span><a href="{{url_for('student_page',student_id=g.student.ID)}}">{{g.student.Name}}</a></span>
             </div>
+            <div class="log-sig-buttons">
+                <span><a href="{{url_for('log_out')}}">Log-Out</a></span>
+            </div>
+        </div>
         {% endif %}
     </nav>
 

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<!-- content block start-->
+<form method="POST" enctype="multipart/form-data">
+    {{ my_pic_form.hidden_tag() }}
+    <div class="left-info-cont red-inf-cont-block border_blue">
+        <div class="info-cont border_blue">
+
+            <!-- content-->
+            <p class="text_redact_info">
+                This image will be face of your personal
+                student page,<br> please consider place something
+                nice here.
+            </p>
+            <div>
+                <div class="left_info_cont border_blue">
+                    {% if g.student.Image %}
+                    <img class="cont_no_image"
+                        src="{{url_for('static',filename = 'uploaded_images/' + g.student.Image)}}"></img>
+                    {% else %}
+                    <img class="cont_no_image" src="{{url_for('static',filename ='images/no_pic.jpg')}}"></img>
+                    {% endif %}
+                    <div class=" red-inf_load_file red-inf_child_elements">
+                        {{ my_pic_form.profile_pic }}
+                    </div>
+                    {{ my_pic_form.submit_btn(class="red-inf_buttons red-inf_child_elements") }}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<form method="POST">
+    {{ my_form.hidden_tag() }}
+    <div class="left-info-cont red-inf-cont-block border_blue">
+        <div class="info-cont border_blue">
+            <!-- content-->
+            <span class="text_redact_info">
+                <h3> About me. </h3>
+                <p>
+                    Describe yourself in few words.
+                </p>
+            </span>
+
+            <div>
+                {{my_form.activities(class_="tx_area_redact_page")}}
+            </div>
+        </div>
+
+        <div class="red-info_sav_buttons_cont">
+            <!-- save block-->
+            {{my_form.submit_btn(class_="red-inf_buttons red-inf_child_elements")}}
+        </div>
+
+    </div>
+</form>
+
+<form method="POST">
+    {{ my_form.hidden_tag() }}
+    <div class="left-info-cont red-inf-cont-block border_blue">
+        <div class="info-cont border_blue">
+            <!-- content-->
+            <span class="text_redact_info">
+                <h3> My classes activites</h3>
+                <p>
+                    Tell us your daily routines and
+                    hobbies.
+                </p>
+            </span>
+            <div class="red-inf_child_elements">
+                {{my_form.about_me(class_="tx_area_redact_page")}}
+            </div>
+        </div>
+
+        <div class="red-info_sav_buttons_cont ">
+            <!-- save block-->
+            {{my_form.submit_btn(class_="red-inf_buttons red-inf_child_elements")}}
+        </div>
+    </div>
+</form>
+
+{% endblock %}
+
+
+{% block misc_content %}
+<!-- other content block start -->
+
+
+
+{% endblock %}

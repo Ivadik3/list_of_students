@@ -1,3 +1,8 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
 .profile-container {
     margin: 0 auto 0 auto;
     padding: 10px;
@@ -69,7 +74,62 @@
 .about_info_cont {
     margin: 20px;
 }
-.redact_info_cont{
+
+.redact_info_cont {
     align-items: flex-start;
-    width:100%;
+    width: 100%;
+}
+
+/* redact info page styles */
+
+.text_redact_info {
+
+    margin: 20px;
+    font-size: 1.5rem;
+    width: 400px;
+
+}
+
+.tx_area_redact_page {
+    width: 400px;
+    height: 12rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    margin: 10px;
+    resize: none;
+
+}
+
+.red-inf-cont-block {
+    margin: 10px;
+    padding: 15px;
+}
+
+.red-inf_buttons {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(28, 82, 116);
+    border: 1px solid rgb(31, 51, 88);
+    width: 120px;
+}
+
+.red-inf_load_file {
+    padding: 10px;
+    background-color: rgb(31, 51, 88);
+    border-radius: 5px;
+
+}
+
+.red-inf_child_elements {
+    margin: 10px;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(206, 198, 198);
+    resize: none;
+}
+
+.red-info_sav_buttons_cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

@@ -8,5 +8,6 @@ import os
 #основной класс приложения, где создаем объект фласки
 
 app = Flask(__name__)
-app.secret_key="sdfpor23po1rplwekqqewtupeseurst"
+app.config['SECRET_KEY']="sdfpor23po1rplwekqqewtupeseurst"
+app.config["UPLOADED_PHOTOS_DEST"] = "static/uploaded_images"
 

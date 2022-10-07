@@ -27,3 +27,10 @@ class User():
         self.ScheduleAction = User.NOT_DEFINED
         self.Info = User.NOT_DEFINED 
         self.Password = password
+        self.Image =User.NOT_DEFINED
+
+    def set_attributes(self,dict1):
+        for key,val in dict1.items():
+            setattr(self,key,val)
+
+    

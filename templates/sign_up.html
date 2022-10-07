@@ -4,30 +4,26 @@
 {% block content %}
 
 <body>
-        <div class ="sign_up_cont">
-          <form method="POST">
-            <div class ="element_s_up">
-              <label for="title">Name</label>
-              <!--label id="cont_error_msg">{{name_error}}</label!-->
-              <input id="name_field" type="text" name="user_name" placeholder="Enter your name"></input>
-            </div>
-            <div>
-              <label for="title">Password</label>
-              <!--label id="cont_error_msg">{{name_error}}</label!-->
-              <input id="name_field" type="text" name="user_password" placeholder="Enter your name"></input>
-            </div>  
-            <div class ="element_s_up">
-              <label>Select your gender</label>
-              <select id="gender" name="user_gender">
-                <option value="0">f</option>
-                <option value="1">m</option>
-              </select>
-            </div>
-            <div class="element_s_up btn-cont">
-              <button class="s_up_btn" type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
+  <div class="sign_up_cont">
+    <form method="POST">
+      {{s_up_form.hidden_tag()}}
+      <div class="element_s_up">
+        <span>{{s_up_form.user.label()}}</span>
+        <span class="name_field">{{s_up_form.user()}}</span>
+      </div>
+      <div class="element_s_up">
+        {{s_up_form.passwd.label()}}
+        <span class="name_field">{{s_up_form.passwd()}}</span>
+      </div>
+      <div class="element_s_up">
+        {{s_up_form.select_gender.label()}}
+        <span class="name_field">{{s_up_form.select_gender()}}</span>
+      </div>
+      <div class="element_s_up btn-cont">
+        <span class="s_up_btn">{{s_up_form.submit_btn()}}</span>
+      </div>
+    </form>
+  </div>
 </body>
 
 {% endblock %}

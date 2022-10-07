@@ -4,25 +4,23 @@
 {% block content %}
 
 <body>
-        <div class ="sign_up_cont">
-          <form method="POST">
-
-            <p>Вход</p>
-            <div class ="element_s_up">
-              <label for="title">Name</label>
-              <!--label id="cont_error_msg">{{name_error}}</label!-->
-              <input id="name_field" type="text" name="user_name" placeholder="Enter your name"></input>
-            </div>
-            <div class ="element_s_up">
-              <label for="title">Password</label>
-              <!--label id="cont_error_msg">{{name_error}}</label!-->
-              <input id="name_field" type="text" name="user_password" placeholder="Enter your name"></input>
-            </div>  
-            <div class="element_s_up btn-cont">
-              <button class="s_up_btn" type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
+  <div class="sign_up_cont">
+    <form method="POST">
+      {{my_form.hidden_tag()}}
+      <p>Вход</p>
+      <div class="element_s_up">
+        {{my_form.user.label()}}
+        <span id="name_field">{{my_form.user()}}</span>
+      </div>
+      <div class="element_s_up">
+        {{my_form.passwd.label()}}
+        <span id="name_field">{{my_form.passwd()}}</span>
+      </div>
+      <div class="element_s_up btn-cont">
+        <span class="s_up_btn"> {{my_form.submit_btn()}} </span>
+      </div>
+    </form>
+  </div>
 </body>
 
 {% endblock %}
